@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>QuizEngineTests_iOS_Test.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
 		<key>QuizEngine_iOS.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
