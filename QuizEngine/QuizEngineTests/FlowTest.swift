@@ -122,10 +122,17 @@ class FlowTest: XCTestCase {
     //MARK: helpers
     
     private let delegate = DelegateSpy()
+    private weak var weakSUT: Flow<DelegateSpy>?
     
+    override func tearDown() {
+        super.tearDown()
+        XCTAssertNil(weakSUT)
+    }
     
     private func makeSUT(questions:[String], scoring: @escaping ([String: String]) -> Int = {_ in 0}) -> Flow<DelegateSpy> {
-        return Flow(questions: questions, router: delegate, scoring: scoring)
+        let sut = Flow(questions: questions, router: delegate, scoring: scoring)
+        weakSUT = sut
+        return sut
     }
     
     private class DelegateSpy: Router {
