@@ -20,3 +20,14 @@ public final class Quiz {
         return Quiz(flow: flow)
     }
 }
+
+func scoring<Question: Hashable, Answer: Equatable>(_ answers: [Question: Answer], correctAnswers: [Question: Answer]) -> Int {
+    return answers.reduce(0) { (score, tuple) in
+        if correctAnswers[tuple.key] == tuple.value {
+            return score + 1
+        } else {
+            return score
+        }
+    }
+}
+ 
