@@ -8,21 +8,8 @@
 
 import Foundation
 import XCTest
-@testable import QuizEngine
+import QuizEngine
 
-final class Quiz {
-    private let flow: Any
-    private init(flow: Any) {
-        self.flow = flow
-    }
-    
-    static func start<Question, Answer: Equatable, Delegate: QuizDelegate>(questions:[Question], delegate: Delegate, correctAnswers:[Question: Answer]) -> Quiz where Question == Delegate.Question, Answer == Delegate.Answer {
-        let flow = Flow(questions: questions, delegate: delegate) { scoring($0, correctAnswers: correctAnswers)
-        }
-        flow.start()
-        return Quiz(flow: flow)
-    }
-}
 class QuizTest: XCTestCase {
     
     private let delegate = DelegateSpy()
