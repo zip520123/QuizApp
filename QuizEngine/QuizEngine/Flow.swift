@@ -17,7 +17,7 @@ class Flow <Delegate: QuizDelegate>{
     private var newAnswers: [(Question, Answer)] = []
     private var answers: [Question: Answer] = [:]
     private var scoring: ([Question: Answer]) -> Int
-    init(questions:[Question], delegate: Delegate, scoring: @escaping ([Question: Answer]) -> Int){
+    init(questions:[Question], delegate: Delegate, scoring: @escaping ([Question: Answer]) -> Int = {_ in 0}){
         self.delegate = delegate
         self.questions = questions
         self.scoring = scoring

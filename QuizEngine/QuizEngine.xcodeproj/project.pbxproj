@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E70A629D25ADD45900C45B60 /* DeprecatedGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A629C25ADD45900C45B60 /* DeprecatedGameTest.swift */; };
 		E72ADEB025B77EC3008D0F75 /* QuizDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72ADEAE25B77DD0008D0F75 /* QuizDelegate.swift */; };
 		E72F875C25B9CA1B0077AFF4 /* QuizTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F875A25B98D0F0077AFF4 /* QuizTest.swift */; };
 		E72F875F25B9CFA50077AFF4 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F875D25B9CF820077AFF4 /* Quiz.swift */; };
 		E7561D8D2582424600FE6A6D /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE440A25586BCD00554C59 /* Flow.swift */; };
 		E7561D8E2582424600FE6A6D /* DeprecatedGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A9F02257D4EC200FB07CF /* DeprecatedGame.swift */; };
 		E7561D902582424600FE6A6D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A9EFC257D4CAC00FB07CF /* Result.swift */; };
+		E78EE46825BDD5AF00453BBE /* DeprecatedGameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70A629C25ADD45900C45B60 /* DeprecatedGameTest.swift */; };
 		E7D8C3B025AD1B4100F73532 /* QuizEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7561D732582415600FE6A6D /* QuizEngine.framework */; };
 		E7D8C3B725AD1B8200F73532 /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE440825586ACE00554C59 /* FlowTest.swift */; };
 		E7D9B3EB2593BE6C001A176B /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D9B3E92593BDBC001A176B /* Question.swift */; };
-		E7FE440925586ACE00554C59 /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FE440825586ACE00554C59 /* FlowTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +40,6 @@
 		E7D8C3AB25AD1B4100F73532 /* QuizEngineTests_iOS_Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizEngineTests_iOS_Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D9B3E92593BDBC001A176B /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		E7FE43F125586A6600554C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E7FE43F625586A6600554C59 /* QuizEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuizEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7FE43FD25586A6600554C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7FE440825586ACE00554C59 /* FlowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTest.swift; sourceTree = "<group>"; };
 		E7FE440A25586BCD00554C59 /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
@@ -63,13 +61,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E7FE43F325586A6600554C59 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -85,7 +76,6 @@
 		E7FE43EE25586A6600554C59 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E7FE43F625586A6600554C59 /* QuizEngineTests.xctest */,
 				E7561D732582415600FE6A6D /* QuizEngine.framework */,
 				E7D8C3AB25AD1B4100F73532 /* QuizEngineTests_iOS_Test.xctest */,
 			);
@@ -166,23 +156,6 @@
 			productReference = E7D8C3AB25AD1B4100F73532 /* QuizEngineTests_iOS_Test.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E7FE43F525586A6600554C59 /* QuizEngineTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E7FE440425586A6600554C59 /* Build configuration list for PBXNativeTarget "QuizEngineTests" */;
-			buildPhases = (
-				E7FE43F225586A6600554C59 /* Sources */,
-				E7FE43F325586A6600554C59 /* Frameworks */,
-				E7FE43F425586A6600554C59 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = QuizEngineTests;
-			productName = QuizEngineTests;
-			productReference = E7FE43F625586A6600554C59 /* QuizEngineTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -199,10 +172,6 @@
 					E7D8C3AA25AD1B4100F73532 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
-					E7FE43F525586A6600554C59 = {
-						CreatedOnToolsVersion = 11.4.1;
-						LastSwiftMigration = 1140;
-					};
 				};
 			};
 			buildConfigurationList = E7FE43E725586A6600554C59 /* Build configuration list for PBXProject "QuizEngine" */;
@@ -218,7 +187,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E7FE43F525586A6600554C59 /* QuizEngineTests */,
 				E7561D722582415600FE6A6D /* QuizEngine_iOS */,
 				E7D8C3AA25AD1B4100F73532 /* QuizEngineTests_iOS_Test */,
 			);
@@ -234,13 +202,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E7D8C3A925AD1B4100F73532 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7FE43F425586A6600554C59 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,17 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E78EE46825BDD5AF00453BBE /* DeprecatedGameTest.swift in Sources */,
 				E72F875C25B9CA1B0077AFF4 /* QuizTest.swift in Sources */,
 				E7D8C3B725AD1B8200F73532 /* FlowTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7FE43F225586A6600554C59 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E70A629D25ADD45900C45B60 /* DeprecatedGameTest.swift in Sources */,
-				E7FE440925586ACE00554C59 /* FlowTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,45 +454,6 @@
 			};
 			name = Release;
 		};
-		E7FE440525586A6600554C59 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = QuizEngineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zip520123.QuizEngineTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		E7FE440625586A6600554C59 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = QuizEngineTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.zip520123.QuizEngineTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -566,15 +480,6 @@
 			buildConfigurations = (
 				E7FE43FF25586A6600554C59 /* Debug */,
 				E7FE440025586A6600554C59 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E7FE440425586A6600554C59 /* Build configuration list for PBXNativeTarget "QuizEngineTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E7FE440525586A6600554C59 /* Debug */,
-				E7FE440625586A6600554C59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
