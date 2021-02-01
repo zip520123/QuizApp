@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E71805A225C8923C00C2E682 /* Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71805A125C8923C00C2E682 /* Assertions.swift */; };
 		E72ADEB025B77EC3008D0F75 /* QuizDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72ADEAE25B77DD0008D0F75 /* QuizDelegate.swift */; };
 		E72F875C25B9CA1B0077AFF4 /* QuizTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F875A25B98D0F0077AFF4 /* QuizTest.swift */; };
 		E72F875F25B9CFA50077AFF4 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72F875D25B9CF820077AFF4 /* Quiz.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		E70A629C25ADD45900C45B60 /* DeprecatedGameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeprecatedGameTest.swift; sourceTree = "<group>"; };
+		E71805A125C8923C00C2E682 /* Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assertions.swift; sourceTree = "<group>"; };
 		E72ADEAE25B77DD0008D0F75 /* QuizDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDelegate.swift; sourceTree = "<group>"; };
 		E72F875A25B98D0F0077AFF4 /* QuizTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTest.swift; sourceTree = "<group>"; };
 		E72F875D25B9CF820077AFF4 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				E7FE43FD25586A6600554C59 /* Info.plist */,
 				E7FE440825586ACE00554C59 /* FlowTest.swift */,
 				E72F875A25B98D0F0077AFF4 /* QuizTest.swift */,
+				E71805A125C8923C00C2E682 /* Assertions.swift */,
 			);
 			path = QuizEngineTests;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				E78EE46825BDD5AF00453BBE /* DeprecatedGameTest.swift in Sources */,
 				E72F875C25B9CA1B0077AFF4 /* QuizTest.swift in Sources */,
+				E71805A225C8923C00C2E682 /* Assertions.swift in Sources */,
 				E7D8C3B725AD1B8200F73532 /* FlowTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
