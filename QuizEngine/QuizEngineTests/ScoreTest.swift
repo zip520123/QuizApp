@@ -12,12 +12,19 @@ class ScoreTest: XCTestCase {
     func test_noAnswers_scoresZero() {
         XCTAssertEqual(0,  BasiceScore.score(for:[], comparingTo: []))
     }
+    
     func test_oneWrongAnswer_scoresZero() {
         XCTAssertEqual(0,  BasiceScore.score(for:["wrong"], comparingTo:["correct"]))
     }
+    
+    func test_oneCorrectAnswer_scoresOne() {
+        XCTAssertEqual(1, BasiceScore.score(for:["correct"], comparingTo:["correct"]))
+    }
+    
     private class BasiceScore {
-        static func score(for something: Any, comparingTo: Any) -> Int {
-            return 0
+        static func score(for answers: [String], comparingTo correctAnswers: [String]) -> Int {
+            if answers.isEmpty {return 0}
+            return answers == correctAnswers ? 1 : 0
         }
     }
 }
