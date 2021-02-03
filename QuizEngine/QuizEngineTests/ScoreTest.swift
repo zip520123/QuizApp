@@ -21,10 +21,21 @@ class ScoreTest: XCTestCase {
         XCTAssertEqual(1, BasiceScore.score(for:["correct"], comparingTo:["correct"]))
     }
     
+    func test_oneCorrectOneWrongAnswer_scoresOne() {
+        let score = BasiceScore.score(
+            for:["correct 1","wrong"],
+            comparingTo:["correct 1","correct 2"])
+        
+        XCTAssertEqual(1, score)
+    }
+    
     private class BasiceScore {
         static func score(for answers: [String], comparingTo correctAnswers: [String]) -> Int {
-            if answers.isEmpty {return 0}
-            return answers == correctAnswers ? 1 : 0
+            var score = 0
+            for (index,answer) in answers.enumerated() {
+                score += answer == correctAnswers[index] ? 1 : 0
+            }
+            return score
         }
     }
 }
