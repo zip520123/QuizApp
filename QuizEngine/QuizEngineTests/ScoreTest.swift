@@ -10,12 +10,13 @@ import Foundation
 import XCTest
 class ScoreTest: XCTestCase {
     func test_noAnswers_scoresZero() {
-        
-        XCTAssertEqual(0,  BasiceScore.score([]))
+        XCTAssertEqual(0,  BasiceScore.score(for:[], comparingTo: []))
     }
-    
+    func test_oneWrongAnswer_scoresZero() {
+        XCTAssertEqual(0,  BasiceScore.score(for:["wrong"], comparingTo:["correct"]))
+    }
     private class BasiceScore {
-        static func score(_ something: Any) -> Int {
+        static func score(for something: Any, comparingTo: Any) -> Int {
             return 0
         }
     }
