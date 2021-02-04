@@ -13,13 +13,15 @@ public final class Quiz {
         self.flow = flow
     }
     
-    public static func start<Delegate: QuizDelegate>(
+    public static func start<Delegate: QuizDelegate, DataSource: QuizDataSource>(
         questions:[Delegate.Question],
-        delegate: Delegate
-    ) -> Quiz where Delegate.Answer: Equatable {
+        delegate: Delegate,
+        dataSource: DataSource
+    ) -> Quiz where Delegate.Answer: Equatable , Delegate.Question == DataSource.Question, Delegate.Answer == DataSource.Answer {
         let flow = Flow(
             questions: questions,
-            delegate: delegate)
+            delegate: delegate,
+            dataSource: dataSource)
         flow.start()
         return Quiz(flow: flow)
     }

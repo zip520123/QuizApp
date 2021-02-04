@@ -8,17 +8,19 @@
 
 import Foundation
 
-class Flow <Delegate: QuizDelegate>{
+class Flow <Delegate: QuizDelegate, DataSource: QuizDataSource> where Delegate.Question == DataSource.Question, Delegate.Answer == DataSource.Answer{
     typealias Question = Delegate.Question
     typealias Answer = Delegate.Answer
     
     private let delegate: Delegate
     private let questions: [Question]
     private var answers: [(Question, Answer)] = []
+    private let dataSource: DataSource
     
-    init(questions:[Question], delegate: Delegate){
+    init(questions:[Question], delegate: Delegate, dataSource: DataSource){
         self.delegate = delegate
         self.questions = questions
+        self.dataSource = dataSource
     }
     
     func start() {
@@ -28,7 +30,7 @@ class Flow <Delegate: QuizDelegate>{
     private func delegateQuestionHandling(at index: Int) {
         if index < questions.endIndex {
             let question = questions[index]
-            delegate.answer(for: question, completion: answer(for: question, at: index))
+            dataSource.answer(for: question, completion: answer(for: question, at: index))
         } else {
             delegate.didCompleteQuiz(withAnswers: answers)
         }

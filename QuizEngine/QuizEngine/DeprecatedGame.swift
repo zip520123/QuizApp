@@ -33,13 +33,15 @@ public class Game<Question, Answer, R:Router> {
 
 @available(*, deprecated, message: "use Quiz.start instead")
 public func startGame<Question, Answer: Equatable, R:Router>(questions:[Question], router: R, correctAnswers:[Question: Answer]) -> Game<Question, Answer, R> where Question == R.Question, Answer == R.Answer {
-    let flow = Flow(questions: questions, delegate: QuizDelegateToRouterAdapter(router, correctAnswers))
+    let delegate = QuizDelegateToRouterAdapter(router, correctAnswers)
+    let flow = Flow(questions: questions, delegate: delegate, dataSource: delegate)
     flow.start()
     return Game(flow: flow)
 }
 
 @available(*,deprecated, message: "remove along with the deprecated Game types")
-private class QuizDelegateToRouterAdapter<R: Router>: QuizDelegate where R.Answer: Equatable {
+private class QuizDelegateToRouterAdapter<R: Router>: QuizDelegate, QuizDataSource where R.Answer: Equatable {
+    
     private let router: R
     private let correctAnswers: [R.Question: R.Answer]
     init(_ router: R, _ correctAnswers: [R.Question: R.Answer]) {
@@ -47,7 +49,7 @@ private class QuizDelegateToRouterAdapter<R: Router>: QuizDelegate where R.Answe
         self.correctAnswers = correctAnswers
     }
     
-    func answer(for question: R.Question, completion: @escaping (Answer) -> Void) {
+    func answer(for question: R.Question, completion: @escaping (R.Answer) -> Void) {
         router.routeTo(question: question, answerCallback: completion)
     }
     
