@@ -8,6 +8,7 @@
 
 import Foundation
 import XCTest
+@testable import QizzApp
 class ScoreTest: XCTestCase {
     func test_noAnswers_scoresZero() {
         XCTAssertEqual(0,  BasiceScore.score(for:[], comparingTo: []))
@@ -53,12 +54,5 @@ class ScoreTest: XCTestCase {
         XCTAssertEqual(1, score)
     }
     
-    private class BasiceScore {
-        static func score(for answers: [String], comparingTo correctAnswers: [String]) -> Int {
-            return zip(answers, correctAnswers).reduce(0) { (res, tuple) in
-                let (answer, correctAnswer) = tuple
-                return res + (answer == correctAnswer ? 1 : 0)
-            }
-        }
-    }
+
 }
