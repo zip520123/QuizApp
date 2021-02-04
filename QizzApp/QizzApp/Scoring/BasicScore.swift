@@ -8,7 +8,7 @@
 
 import Foundation
 final class BasiceScore {
-    static func score(for answers: [String], comparingTo correctAnswers: [String]) -> Int {
+    static func score<T: Equatable>(for answers: [T], comparingTo correctAnswers: [T]) -> Int {
         return zip(answers, correctAnswers).reduce(0) { (res, tuple) in
             let (answer, correctAnswer) = tuple
             return res + (answer == correctAnswer ? 1 : 0)

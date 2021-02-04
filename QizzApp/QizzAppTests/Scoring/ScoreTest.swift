@@ -11,7 +11,7 @@ import XCTest
 @testable import QizzApp
 class ScoreTest: XCTestCase {
     func test_noAnswers_scoresZero() {
-        XCTAssertEqual(0,  BasiceScore.score(for:[], comparingTo: []))
+        XCTAssertEqual(0,  BasiceScore.score(for:[String](), comparingTo: [String]()))
     }
     
     func test_oneNoMatchingAnswer_scoresZero() {
