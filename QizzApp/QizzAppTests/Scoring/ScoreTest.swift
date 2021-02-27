@@ -24,32 +24,32 @@ class ScoreTest: XCTestCase {
     
     func test_oneMatchingOneNoMatchingAnswer_scoresOne() {
         let score = BasiceScore.score(
-            for:["correct 1","not a match"],
-            comparingTo:["correct 1","correct 2"])
+            for:["an answer","not a match"],
+            comparingTo:["an answer","another answer"])
         
         XCTAssertEqual(1, score)
     }
     
     func test_twoMatchingAnswers_scoreTwo() {
         let score = BasiceScore.score(
-            for:["correct 1","correct 2"],
-            comparingTo:["correct 1","correct 2"])
+            for:["an answer","another answer"],
+            comparingTo:["an answer","another answer"])
         
         XCTAssertEqual(2, score)
     }
     
     func test_withTooManyAnswers_twoMatchingAnswers_scoreTwo() {
         let score = BasiceScore.score(
-            for:["correct 1","correct 2", "an extra answer"],
-            comparingTo:["correct 1","correct 2"])
+            for:["an answer","another answer", "an extra answer"],
+            comparingTo:["an answer","another answer"])
         
         XCTAssertEqual(2, score)
     }
     
     func test_withTooManyCorrectAnswers_oneMatchingAnswers_scoreOne() {
         let score = BasiceScore.score(
-            for:["not matching","correct 2"],
-            comparingTo:["correct 1","correct 2", "an extra answer"])
+            for:["not matching","another answer"],
+            comparingTo:["an answer","another answer", "an extra answer"])
         
         XCTAssertEqual(1, score)
     }
