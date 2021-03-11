@@ -22,9 +22,11 @@ class ResultsPresenterTest: XCTestCase {
     }
     
     func test_summery_withTwoQuestionAndScoreOne_returnsSummery() {
-        let answers = [Question.singleAnswer("Q1"): ["A1"], Question.multibleAnswer("Q2"):["A2","A3"]]
+        let answers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion:["A2","A3"]]
+        let correctAnswers = [singleAnswerQuestion: ["A1"], multipleAnswerQuestion:["A2"]]
+        let orderedQuestions = [singleAnswerQuestion,multipleAnswerQuestion]
         let result = Result.make(answers: answers, score: 1)
-        let sut = ResultsPresenter(result: result, questions: [singleAnswerQuestion,multipleAnswerQuestion], correctAnswers: [:])
+        let sut = ResultsPresenter(result: result, questions: orderedQuestions, correctAnswers: correctAnswers)
         XCTAssertEqual(sut.summery, "You got 1/2 correct")
     }
     
