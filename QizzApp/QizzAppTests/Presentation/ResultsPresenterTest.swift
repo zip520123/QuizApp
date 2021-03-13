@@ -11,8 +11,7 @@ import XCTest
 
 @testable import QizzApp
 class ResultsPresenterTest: XCTestCase {
-    let singleAnswerQuestion = Question.singleAnswer("Q1")
-    let multipleAnswerQuestion = Question.multibleAnswer("Q2")
+
     
     func test_title_returnsFormattedTitle() {
         XCTAssertEqual(makeSUT().title, "Result")
@@ -73,6 +72,9 @@ class ResultsPresenterTest: XCTestCase {
         XCTAssertNil(sut.presentableAnswers.last!.wrongAnswer)
 
     }
+    
+    private let singleAnswerQuestion = Question.singleAnswer("Q1")
+    private let multipleAnswerQuestion = Question.multibleAnswer("Q2")
     
     func makeSUT(
         userAnswers: ResultsPresenter.Answers = [],
