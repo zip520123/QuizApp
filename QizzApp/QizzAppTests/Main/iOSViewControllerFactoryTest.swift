@@ -98,20 +98,17 @@ class iOSViewControllerFactoryTest: XCTestCase {
         let userAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1","A2"])]
         let correcntAnswers = [(singleAnswerQuestion, ["A1"]), (multipleAnswerQuestion, ["A1","A2"])]
         
-        let result = Result.make(
-            answers: [singleAnswerQuestion: ["A1"],
-                      multipleAnswerQuestion: ["A1", "A2"]],
-            score: 2)
         let presenter = ResultsPresenter(
             userAnswers: userAnswers,
             correctAnswers: correcntAnswers,
-            scorer: {_,_ in result.score })
+            scorer: BasiceScore.score)
         
         let sut = makeSUT(correctAnswers: correcntAnswers)
         
         
-        let controller = sut.resultViewController(for: result) as! ResultsViewController
+        let controller = sut.resultViewController(for: userAnswers) as! ResultsViewController
         return (controller, presenter)
     }
+
 }
 

@@ -72,4 +72,15 @@ class iOSViewControllerFactory: ViewControllerFactory {
         return controller
     }
     
+    func resultViewController(for userAnswers: Answers) -> UIViewController {
+        let presenter = ResultsPresenter(
+            userAnswers: userAnswers,
+            correctAnswers: correctAnswers(),
+            scorer: BasiceScore.score)
+        
+        let controller = ResultsViewController(summery: presenter.summery, answers:presenter.presentableAnswers)
+        controller.title = presenter.title
+        
+        return controller
+    }
 }
