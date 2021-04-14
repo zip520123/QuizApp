@@ -23,16 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let option1 = "Canadian"
         let option2 = "American"
         let option3 = "Greek"
-        let options = [option1, option2, option3]
+        let options1 = [option1, option2, option3]
         
         let option4 = "Portuguese"
         let option5 = "American"
         let option6 = "Brazilian"
-        let options1 = [option4, option5, option6]
+        let options2 = [option4, option5, option6]
         
         let correctAnswers = [question1: [option3], question2: [option4,option6]]
         let navigationController = UINavigationController()
-        let factory = iOSViewControllerFactory(questions: questions, options: [question1: options, question2: options1], correctAnswers: correctAnswers)
+        let factory = iOSViewControllerFactory(
+            options: [question1: options1, question2: options2],
+            correctAnswers: [(question1,[option3]),(question2, [option4, option6]) ])
         let router = NavigationControllerRouter(navigationController, factory: factory)
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = navigationController
