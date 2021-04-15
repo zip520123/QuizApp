@@ -18,14 +18,15 @@ class NavigationControllerRouter: Router {
         self.factory = factory
     }
     
-    func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
+//    func didCompleteQuiz(withAnswers: [(question: Question, answer: Answer)]) {}
+    func answer(for question: QuizEngine.Question<String>, completion: @escaping ([String]) -> Void) {
         switch question {
         case .singleAnswer:
-            show(factory.questionViewController(for: question, answerCallback: answerCallback))
+            show(factory.questionViewController(for: question, answerCallback: completion))
         case .multibleAnswer:
             let button = UIBarButtonItem(title: "submit", style: .done, target: nil, action: nil)
             
-            let submitButtonController = SubmitButtonController(button, answerCallback)
+            let submitButtonController = SubmitButtonController(button, completion)
             
             let controller = factory.questionViewController(for: question, answerCallback: { selection in
                 submitButtonController.update(selection)
@@ -34,6 +35,10 @@ class NavigationControllerRouter: Router {
             controller.navigationItem.rightBarButtonItem = button
             show(controller)
         }
+    }
+    
+    func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
+        answer(for: question, completion: answerCallback)
     }
     
     func routeTo(result: Result<Question<String>, [String]>) {
