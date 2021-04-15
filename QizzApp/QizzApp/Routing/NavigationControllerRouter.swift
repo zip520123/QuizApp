@@ -18,7 +18,6 @@ class NavigationControllerRouter: Router {
         self.factory = factory
     }
     
-//    func didCompleteQuiz(withAnswers: [(question: Question, answer: Answer)]) {}
     func answer(for question: QuizEngine.Question<String>, completion: @escaping ([String]) -> Void) {
         switch question {
         case .singleAnswer:
