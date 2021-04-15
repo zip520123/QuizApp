@@ -21,7 +21,7 @@ class NavigationControllerRouterTest: XCTestCase {
         NavigationControllerRouter(navigationController, factory: factory)
     }()
     
-    func test_routeToSecondQuestion_showsQuestionController() {
+    func test_answerForSecondQuestion_showsQuestionController() {
         
         let viewController = UIViewController()
         let secondController = UIViewController()
@@ -29,8 +29,8 @@ class NavigationControllerRouterTest: XCTestCase {
         factory.stub(question:singleAnswerQuestion,with: viewController)
         factory.stub(question:multipleAnswerQuestion,with: secondController)
             
-        sut.routeTo(question: singleAnswerQuestion, answerCallback: {_ in})
-        sut.routeTo(question: multipleAnswerQuestion, answerCallback: {_ in})
+        sut.answer(for: singleAnswerQuestion, completion: {_ in})
+        sut.answer(for: multipleAnswerQuestion, completion: {_ in})
         
         XCTAssertEqual(navigationController.viewControllers.count, 2)
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
@@ -113,13 +113,14 @@ class NavigationControllerRouterTest: XCTestCase {
     func test_answerForQuestion_showsQuestionController() {
         
         let viewController = UIViewController()
+        let userAnswers = [(singleAnswerQuestion, ["A1"])]
         let secondViewController = UIViewController()
+        let secondUserAnswers = [(singleAnswerQuestion, ["A2"])]
         
-        factory.stub(question: singleAnswerQuestion, with: viewController)
-        factory.stub(question: multipleAnswerQuestion, with: secondViewController)
-        
-        sut.answer(for: singleAnswerQuestion, completion: {_ in })
-        sut.answer(for: multipleAnswerQuestion, completion: {_ in})
+        factory.stub(resultForQuestions: [singleAnswerQuestion], with: viewController)
+        factory.stub(resultForQuestions: [multipleAnswerQuestion], with: secondViewController)
+        sut.didCompleteQuiz(withAnswers: userAnswers)
+        sut.didCompleteQuiz(withAnswers: secondUserAnswers )
         
         XCTAssertEqual(navigationController.viewControllers.count, 2)
         XCTAssertEqual(navigationController.viewControllers.first, viewController)
@@ -139,14 +140,14 @@ class NavigationControllerRouterTest: XCTestCase {
     
     class ViewControllerFacotryStub: ViewControllerFactory {
         private var stubbedQuestions = [Question<String>: UIViewController]()
-        private var stubbedResults = Dictionary<Result<Question<String>,[String]>,UIViewController>()
+        private var stubbedResults = Dictionary<[Question<String>], UIViewController>()
         var answerCallBack = [Question<String>:([String]) -> Void]()
         
         func stub(question: Question<String>, with viewController: UIViewController) {
             stubbedQuestions[question] = viewController
         }
-        func stub(result: Result<Question<String>,[String]>, with viewController: UIViewController) {
-            stubbedResults[result] = viewController
+        func stub(resultForQuestions questions: [Question<String>], with viewController: UIViewController) {
+            stubbedResults[questions] = viewController
         }
         func questionViewController(for question: Question<String>,  answerCallback:@escaping ([String])->Void) -> UIViewController {
             self.answerCallBack[question] = answerCallback
@@ -154,11 +155,11 @@ class NavigationControllerRouterTest: XCTestCase {
         }
         
         func resultViewController(for userAnswers: Answers) -> UIViewController {
-            return UIViewController()
+            return stubbedResults[userAnswers.map {$0.question}] ?? UIViewController()
         }
         
         func resultViewController(for result: Result<Question<String>, [String]>) -> UIViewController {
-            return stubbedResults[result, default: UIViewController()]
+            return UIViewController()
         }
     }
 }
