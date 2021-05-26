@@ -9,7 +9,7 @@
 import UIKit
 import QuizEngine
 
-class NavigationControllerRouter: Router, QuizDelegate, QuizDataSource {
+class NavigationControllerRouter: QuizDelegate, QuizDataSource {
     
     private let navigationController: UINavigationController
     private let factory: ViewControllerFactory
@@ -37,16 +37,8 @@ class NavigationControllerRouter: Router, QuizDelegate, QuizDataSource {
         }
     }
     
-    func routeTo(question: Question<String>, answerCallback: @escaping ([String]) -> Void) {
-        answer(for: question, completion: answerCallback)
-    }
-    
     func didCompleteQuiz(withAnswers answers: [(question: Question<String>, answer: [String])]) {
         show(factory.resultViewController(for: answers.map { $0 }))
-    }
-    
-    func routeTo(result: Result<Question<String>, [String]>) {
-        show(factory.resultViewController(for: result))
     }
     
     private func show(_ viewController: UIViewController) {
