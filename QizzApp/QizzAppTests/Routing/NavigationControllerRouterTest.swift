@@ -115,12 +115,11 @@ class NavigationControllerRouterTest: XCTestCase {
         let viewController = UIViewController()
         let userAnswers = [(singleAnswerQuestion, ["A1"])]
         let secondViewController = UIViewController()
-        let secondUserAnswers = [(singleAnswerQuestion, ["A2"])]
+        let secondUserAnswers = [(multipleAnswerQuestion, ["A2"])]
         
         factory.stub(resultForQuestions: [singleAnswerQuestion], with: viewController)
         factory.stub(resultForQuestions: [multipleAnswerQuestion], with: secondViewController)
         sut.didCompleteQuiz(withAnswers: userAnswers)
-        
         sut.didCompleteQuiz(withAnswers: secondUserAnswers)
         
         XCTAssertEqual(navigationController.viewControllers.count, 2)
