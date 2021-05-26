@@ -19,7 +19,7 @@ final class NavigationControllerRouter: QuizDelegate, QuizDataSource {
         self.factory = factory
     }
     
-    func answer(for question: QuizEngine.Question<String>, completion: @escaping ([String]) -> Void) {
+    func answer(for question: Question<String>, completion: @escaping ([String]) -> Void) {
         switch question {
         case .singleAnswer:
             show(factory.questionViewController(for: question, answerCallback: completion))
