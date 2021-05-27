@@ -222,6 +222,7 @@
 		E73502BF259BABED0082925E /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				E73502C2259BABED0082925E /* iOSViewControllerFactory.swift */,
 				E73502C0259BABED0082925E /* NavigationControllerRouter.swift */,
 				E73502C1259BABED0082925E /* ViewControllerFactory.swift */,
 			);
@@ -303,7 +304,6 @@
 				E73502CB259BABED0082925E /* AppDelegate.swift */,
 				E73502C4259BABED0082925E /* Assets.xcassets */,
 				E73502C3259BABED0082925E /* Info.plist */,
-				E73502C2259BABED0082925E /* iOSViewControllerFactory.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -382,7 +382,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = zip520123;
 				TargetAttributes = {
 					E71EE067255EEAC8007852BB = {
