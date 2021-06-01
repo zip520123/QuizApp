@@ -18,7 +18,9 @@ struct SingleAnswerQuestion: View {
             QuestionHeader(title: title, question: question)
             
             ForEach(options, id: \.self) { (option) in
-                SingleTextSelectionCell(text: option, selection: {})
+                SingleTextSelectionCell(text: option, selection: {
+                    selection(option)
+                })
 
             }
             Spacer()
@@ -29,20 +31,24 @@ struct SingleAnswerQuestion: View {
 struct SingleAnswerQuestion_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            SingleAnswerQuestion(title: "1 of 2",
-                                 question: "What's Mike's name",
-                                 options: ["Portuguess", "American", "Geek"
-                                 ], selection: {_ in
-                                    
-                                 })
-            SingleAnswerQuestion(title: "1 of 2",
-                                 question: "What's Mike's name",
-                                 options: ["Portuguess", "American", "Geek"
-                                 ], selection: {_ in
-                                    
-                                 }).preferredColorScheme(.dark).environment(\.sizeCategory, .extraExtraLarge)
+            SingleAnswerQuestionTestView()
+            
+            SingleAnswerQuestionTestView()
+                .preferredColorScheme(.dark).environment(\.sizeCategory, .extraExtraLarge)
         }
         
+    }
+    struct SingleAnswerQuestionTestView: View {
+        @State var selection: String = "none"
+        var body: some View {
+            VStack {
+                SingleAnswerQuestion(title: "1 of 2", question: "What'sM Mike's name", options: ["Portuguess", "American", "Geek"
+                ]) { selection = $0
+                }
+                Text("Last selection: " + selection)
+            }
+            
+        }
     }
 }
 
