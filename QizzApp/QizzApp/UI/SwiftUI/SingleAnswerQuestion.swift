@@ -15,15 +15,7 @@ struct SingleAnswerQuestion: View {
     let selection: (String) -> Void
     var body: some View {
         VStack(alignment: .leading, spacing: 0.0) {
-            VStack(alignment: .leading, spacing: 16.0) {
-                Text(title)
-                    .font(.headline)
-                    .fontWeight(.medium)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                Text(question)
-                    .font(.largeTitle)
-                    .fontWeight(.medium)
-            }.padding()
+            QuestionHeader(title: title, question: question)
             
             ForEach(options, id: \.self) { (option) in
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
@@ -64,3 +56,4 @@ struct SingleAnswerQuestion_Previews: PreviewProvider {
         
     }
 }
+
