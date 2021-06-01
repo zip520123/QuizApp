@@ -13,7 +13,7 @@ import QuizEngine
 class iOSSwiftUIViewControllerFactoryTest: XCTestCase {
 
     func test_questionViewController_singleAnswer_createControllerWithTitle() throws {
-        let presenter = QuestionPresenter(questions: [singleAnswerQuestion], question: singleAnswerQuestion)
+        let presenter = QuestionPresenter(questions: quesions, question: singleAnswerQuestion)
         let view = try XCTUnwrap(makeSingleAnswerQuestion())
         XCTAssertEqual(view.title, presenter.title)
     }

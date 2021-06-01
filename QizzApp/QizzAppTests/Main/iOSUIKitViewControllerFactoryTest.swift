@@ -14,10 +14,12 @@ class iOSUIKitViewControllerFactoryTest: XCTestCase {
     let options = ["A1","A2"]
     let singleAnswerQuestion = Question.singleAnswer("Q1")
     let multipleAnswerQuestion = Question.multibleAnswer("Q1")
-    
+    private var quesions: [Question<String>] {
+        [singleAnswerQuestion, multipleAnswerQuestion]
+    }
     func test_questionViewController_singleAnswer_createControllerWithTitle() {
         
-        let presenter = QuestionPresenter(questions: [singleAnswerQuestion], question: singleAnswerQuestion)
+        let presenter = QuestionPresenter(questions: quesions, question: singleAnswerQuestion)
         let controller = makeQuestionController(question: singleAnswerQuestion)
         XCTAssertEqual(controller.title, presenter.title)
     }
