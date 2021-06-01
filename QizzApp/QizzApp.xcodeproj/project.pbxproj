@@ -19,13 +19,13 @@
 		E73502D5259BABED0082925E /* UITableVIewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502BE259BABED0082925E /* UITableVIewExtensions.swift */; };
 		E73502D6259BABED0082925E /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502C0259BABED0082925E /* NavigationControllerRouter.swift */; };
 		E73502D7259BABED0082925E /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502C1259BABED0082925E /* ViewControllerFactory.swift */; };
-		E73502D8259BABED0082925E /* iOSViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502C2259BABED0082925E /* iOSViewControllerFactory.swift */; };
+		E73502D8259BABED0082925E /* iOSUIKitViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502C2259BABED0082925E /* iOSUIKitViewControllerFactory.swift */; };
 		E73502DA259BABED0082925E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73502C4259BABED0082925E /* Assets.xcassets */; };
 		E73502DB259BABED0082925E /* QuestionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502C7259BABED0082925E /* QuestionPresenter.swift */; };
 		E73502DC259BABED0082925E /* ResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502C9259BABED0082925E /* ResultsPresenter.swift */; };
 		E73502DD259BABED0082925E /* PresentableAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502CA259BABED0082925E /* PresentableAnswer.swift */; };
 		E73502DE259BABED0082925E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502CB259BABED0082925E /* AppDelegate.swift */; };
-		E73502ED259BAC010082925E /* iOSViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502E0259BAC010082925E /* iOSViewControllerFactoryTest.swift */; };
+		E73502ED259BAC010082925E /* iOSUIKitViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502E0259BAC010082925E /* iOSUIKitViewControllerFactoryTest.swift */; };
 		E73502EE259BAC010082925E /* NavigationControllerRouterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502E2259BAC010082925E /* NavigationControllerRouterTest.swift */; };
 		E73502F0259BAC010082925E /* ResultsPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502E5259BAC010082925E /* ResultsPresenterTest.swift */; };
 		E73502F1259BAC010082925E /* QuestionPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502E6259BAC010082925E /* QuestionPresenterTest.swift */; };
@@ -79,14 +79,14 @@
 		E73502BE259BABED0082925E /* UITableVIewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableVIewExtensions.swift; sourceTree = "<group>"; };
 		E73502C0259BABED0082925E /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 		E73502C1259BABED0082925E /* ViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
-		E73502C2259BABED0082925E /* iOSViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactory.swift; sourceTree = "<group>"; };
+		E73502C2259BABED0082925E /* iOSUIKitViewControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSUIKitViewControllerFactory.swift; sourceTree = "<group>"; };
 		E73502C3259BABED0082925E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E73502C4259BABED0082925E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E73502C7259BABED0082925E /* QuestionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPresenter.swift; sourceTree = "<group>"; };
 		E73502C9259BABED0082925E /* ResultsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsPresenter.swift; sourceTree = "<group>"; };
 		E73502CA259BABED0082925E /* PresentableAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentableAnswer.swift; sourceTree = "<group>"; };
 		E73502CB259BABED0082925E /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E73502E0259BAC010082925E /* iOSViewControllerFactoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSViewControllerFactoryTest.swift; sourceTree = "<group>"; };
+		E73502E0259BAC010082925E /* iOSUIKitViewControllerFactoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSUIKitViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		E73502E2259BAC010082925E /* NavigationControllerRouterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouterTest.swift; sourceTree = "<group>"; };
 		E73502E5259BAC010082925E /* ResultsPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsPresenterTest.swift; sourceTree = "<group>"; };
 		E73502E6259BAC010082925E /* QuestionPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionPresenterTest.swift; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 		E73502BF259BABED0082925E /* Routing */ = {
 			isa = PBXGroup;
 			children = (
-				E73502C2259BABED0082925E /* iOSViewControllerFactory.swift */,
+				E73502C2259BABED0082925E /* iOSUIKitViewControllerFactory.swift */,
 				E73502C0259BABED0082925E /* NavigationControllerRouter.swift */,
 				E73502C1259BABED0082925E /* ViewControllerFactory.swift */,
 			);
@@ -262,7 +262,7 @@
 		E73502DF259BAC010082925E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E73502E0259BAC010082925E /* iOSViewControllerFactoryTest.swift */,
+				E73502E0259BAC010082925E /* iOSUIKitViewControllerFactoryTest.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -473,7 +473,7 @@
 				E78FE13C25CC33DF00D0255E /* BasicScore.swift in Sources */,
 				E73502D7259BABED0082925E /* ViewControllerFactory.swift in Sources */,
 				E73502CC259BABED0082925E /* CorrectAnswerCell.swift in Sources */,
-				E73502D8259BABED0082925E /* iOSViewControllerFactory.swift in Sources */,
+				E73502D8259BABED0082925E /* iOSUIKitViewControllerFactory.swift in Sources */,
 				E7413A2D266262A5001FAD52 /* SingleAnswerQuestion.swift in Sources */,
 				E73502DD259BABED0082925E /* PresentableAnswer.swift in Sources */,
 				E73502DB259BABED0082925E /* QuestionPresenter.swift in Sources */,
@@ -491,7 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E73502EE259BAC010082925E /* NavigationControllerRouterTest.swift in Sources */,
-				E73502ED259BAC010082925E /* iOSViewControllerFactoryTest.swift in Sources */,
+				E73502ED259BAC010082925E /* iOSUIKitViewControllerFactoryTest.swift in Sources */,
 				E78FE13525CC330500D0255E /* ScoreTest.swift in Sources */,
 				E73502F5259BAC010082925E /* TableViewHelpers.swift in Sources */,
 				E73502F4259BAC010082925E /* QuestionViewControllerTest.swift in Sources */,
