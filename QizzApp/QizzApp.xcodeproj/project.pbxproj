@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70316CE266E415E00970495 /* MultipleSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70316CD266E415E00970495 /* MultipleSelectionStore.swift */; };
 		E73502CC259BABED0082925E /* CorrectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502B1259BABED0082925E /* CorrectAnswerCell.swift */; };
 		E73502CD259BABED0082925E /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73502B2259BABED0082925E /* WrongAnswerCell.xib */; };
 		E73502CE259BABED0082925E /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73502B3259BABED0082925E /* CorrectAnswerCell.xib */; };
@@ -67,6 +68,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E70316CD266E415E00970495 /* MultipleSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStore.swift; sourceTree = "<group>"; };
 		E71EE068255EEAC8007852BB /* QizzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QizzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71EE07E255EEAC9007852BB /* QizzAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QizzAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71EE084255EEAC9007852BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				E7413A2C266262A5001FAD52 /* SingleAnswerQuestion.swift */,
 				E7D0FA8226667C9F0026D101 /* QuestionHeader.swift */,
 				E7D0FA8526667E3E0026D101 /* SingleSelectionCell.swift */,
+				E70316CD266E415E00970495 /* MultipleSelectionStore.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 			files = (
 				E73502DE259BABED0082925E /* AppDelegate.swift in Sources */,
 				E73502D6259BABED0082925E /* NavigationControllerRouter.swift in Sources */,
+				E70316CE266E415E00970495 /* MultipleSelectionStore.swift in Sources */,
 				E73502DC259BABED0082925E /* ResultsPresenter.swift in Sources */,
 				E78FE13C25CC33DF00D0255E /* BasicScore.swift in Sources */,
 				E73502D7259BABED0082925E /* ViewControllerFactory.swift in Sources */,

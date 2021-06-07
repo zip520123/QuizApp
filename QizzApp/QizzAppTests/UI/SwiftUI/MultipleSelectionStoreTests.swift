@@ -7,32 +7,7 @@
 //
 
 import XCTest
-struct MultipleSelectionStore {
-    var canSubmit : Bool {
-        options.filter{ $0.isSelected }.endIndex > 0
-    }
-    
-    var options: [MultipleSelectionOption]
-    private let handler: ([String])->Void
-    
-    internal init(options: [String], handler: @escaping ([String])-> Void = {_ in}) {
-        self.options = options.map {MultipleSelectionOption(text: $0)}
-        self.handler = handler
-    }
-    
-    func submit() {
-        guard canSubmit else {return}
-        handler(options.filter{ $0.isSelected }.map {$0.text})
-    }
-}
-
-struct MultipleSelectionOption {
-    let text: String
-    var isSelected = false
-    mutating func select() {
-        isSelected.toggle()
-    }
-}
+@testable import QizzApp
 
 class MultipleSelectionStoreTests: XCTestCase {
     func test_selectOption_toggleState() {
