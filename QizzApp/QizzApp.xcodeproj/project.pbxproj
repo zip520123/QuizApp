@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		E70316CE266E415E00970495 /* MultipleSelectionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70316CD266E415E00970495 /* MultipleSelectionStore.swift */; };
+		E70316D1266E41FB00970495 /* MultipleAnswerQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70316D0266E41FB00970495 /* MultipleAnswerQuestion.swift */; };
+		E70316D4266E427000970495 /* MultipleTextSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70316D3266E427000970495 /* MultipleTextSelectionCell.swift */; };
 		E73502CC259BABED0082925E /* CorrectAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73502B1259BABED0082925E /* CorrectAnswerCell.swift */; };
 		E73502CD259BABED0082925E /* WrongAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73502B2259BABED0082925E /* WrongAnswerCell.xib */; };
 		E73502CE259BABED0082925E /* CorrectAnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E73502B3259BABED0082925E /* CorrectAnswerCell.xib */; };
@@ -69,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		E70316CD266E415E00970495 /* MultipleSelectionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStore.swift; sourceTree = "<group>"; };
+		E70316D0266E41FB00970495 /* MultipleAnswerQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleAnswerQuestion.swift; sourceTree = "<group>"; };
+		E70316D3266E427000970495 /* MultipleTextSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTextSelectionCell.swift; sourceTree = "<group>"; };
 		E71EE068255EEAC8007852BB /* QizzApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QizzApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71EE07E255EEAC9007852BB /* QizzAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QizzAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71EE084255EEAC9007852BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -339,6 +343,8 @@
 				E7D0FA8226667C9F0026D101 /* QuestionHeader.swift */,
 				E7D0FA8526667E3E0026D101 /* SingleSelectionCell.swift */,
 				E70316CD266E415E00970495 /* MultipleSelectionStore.swift */,
+				E70316D0266E41FB00970495 /* MultipleAnswerQuestion.swift */,
+				E70316D3266E427000970495 /* MultipleTextSelectionCell.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				E73502D7259BABED0082925E /* ViewControllerFactory.swift in Sources */,
 				E79A5BFA2666BD3600ABDA23 /* iOSSwiftUIViewControllerFactory.swift in Sources */,
 				E73502CC259BABED0082925E /* CorrectAnswerCell.swift in Sources */,
+				E70316D1266E41FB00970495 /* MultipleAnswerQuestion.swift in Sources */,
 				E73502D8259BABED0082925E /* iOSUIKitViewControllerFactory.swift in Sources */,
 				E7413A2D266262A5001FAD52 /* SingleAnswerQuestion.swift in Sources */,
 				E73502DD259BABED0082925E /* PresentableAnswer.swift in Sources */,
@@ -511,6 +518,7 @@
 				E73502D5259BABED0082925E /* UITableVIewExtensions.swift in Sources */,
 				E7D0FA8626667E3E0026D101 /* SingleSelectionCell.swift in Sources */,
 				E73502D3259BABED0082925E /* QuestionViewController.swift in Sources */,
+				E70316D4266E427000970495 /* MultipleTextSelectionCell.swift in Sources */,
 				E73502D0259BABED0082925E /* ResultsViewController.swift in Sources */,
 				E7D0FA8326667C9F0026D101 /* QuestionHeader.swift in Sources */,
 			);
