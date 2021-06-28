@@ -8,16 +8,16 @@
 
 import SwiftUI
 
-struct QuestionHeader: View {
+struct HeaderView: View {
     let title: String
-    let question: String
+    let subtitle: String
     var body: some View {
         VStack(alignment: .leading, spacing: 16.0) {
             Text(title)
                 .font(.headline)
                 .fontWeight(.medium)
                 .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-            Text(question)
+            Text(subtitle)
                 .font(.largeTitle)
                 .fontWeight(.medium)
         }.padding()
@@ -27,6 +27,6 @@ struct QuestionHeader: View {
 
 struct QuestionHeader_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionHeader(title: "A title", question: "A question")
+        HeaderView(title: "A title", subtitle: "A subtitle")
     }
 }
