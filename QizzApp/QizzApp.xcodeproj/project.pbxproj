@@ -44,6 +44,8 @@
 		E79A5BF72666BCE400ABDA23 /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A5BF62666BCE400ABDA23 /* iOSSwiftUIViewControllerFactoryTest.swift */; };
 		E79A5BFA2666BD3600ABDA23 /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A5BF92666BD3600ABDA23 /* iOSSwiftUIViewControllerFactory.swift */; };
 		E79A5C2F2667DFAF00ABDA23 /* MultipleSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A5C2E2667DFAF00ABDA23 /* MultipleSelectionStoreTests.swift */; };
+		E7A4839226906098001E12A6 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4839126906098001E12A6 /* ResultView.swift */; };
+		E7CB938126944F0D00E0DFC4 /* ResultAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CB938026944F0D00E0DFC4 /* ResultAnswerCell.swift */; };
 		E7D0FA8326667C9F0026D101 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0FA8226667C9F0026D101 /* HeaderView.swift */; };
 		E7D0FA8626667E3E0026D101 /* SingleSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0FA8526667E3E0026D101 /* SingleSelectionCell.swift */; };
 /* End PBXBuildFile section */
@@ -117,6 +119,8 @@
 		E79A5BF62666BCE400ABDA23 /* iOSSwiftUIViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactoryTest.swift; sourceTree = "<group>"; };
 		E79A5BF92666BD3600ABDA23 /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
 		E79A5C2E2667DFAF00ABDA23 /* MultipleSelectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStoreTests.swift; sourceTree = "<group>"; };
+		E7A4839126906098001E12A6 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		E7CB938026944F0D00E0DFC4 /* ResultAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAnswerCell.swift; sourceTree = "<group>"; };
 		E7D0FA8226667C9F0026D101 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		E7D0FA8526667E3E0026D101 /* SingleSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectionCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -344,11 +348,8 @@
 			isa = PBXGroup;
 			children = (
 				E77515AC2689E40800933B05 /* Helpers */,
-				E7413A2C266262A5001FAD52 /* SingleAnswerQuestion.swift */,
-				E7D0FA8526667E3E0026D101 /* SingleSelectionCell.swift */,
-				E70316CD266E415E00970495 /* MultipleSelectionStore.swift */,
-				E70316D0266E41FB00970495 /* MultipleAnswerQuestion.swift */,
-				E70316D3266E427000970495 /* MultipleTextSelectionCell.swift */,
+				E7A4838E2690606B001E12A6 /* Question */,
+				E7A4839026906075001E12A6 /* Result */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -407,6 +408,27 @@
 				E77515A82689DFC600933B05 /* MultipleAnswerQuestionSnapshotTests.swift */,
 			);
 			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		E7A4838E2690606B001E12A6 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				E7413A2C266262A5001FAD52 /* SingleAnswerQuestion.swift */,
+				E7D0FA8526667E3E0026D101 /* SingleSelectionCell.swift */,
+				E70316CD266E415E00970495 /* MultipleSelectionStore.swift */,
+				E70316D0266E41FB00970495 /* MultipleAnswerQuestion.swift */,
+				E70316D3266E427000970495 /* MultipleTextSelectionCell.swift */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		E7A4839026906075001E12A6 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				E7A4839126906098001E12A6 /* ResultView.swift */,
+				E7CB938026944F0D00E0DFC4 /* ResultAnswerCell.swift */,
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,6 +550,7 @@
 				E73502D8259BABED0082925E /* iOSUIKitViewControllerFactory.swift in Sources */,
 				E7413A2D266262A5001FAD52 /* SingleAnswerQuestion.swift in Sources */,
 				E73502DD259BABED0082925E /* PresentableAnswer.swift in Sources */,
+				E7A4839226906098001E12A6 /* ResultView.swift in Sources */,
 				E73502DB259BABED0082925E /* QuestionPresenter.swift in Sources */,
 				E73502CF259BABED0082925E /* WrongAnswerCell.swift in Sources */,
 				E73502D5259BABED0082925E /* UITableVIewExtensions.swift in Sources */,
@@ -535,6 +558,7 @@
 				E73502D3259BABED0082925E /* QuestionViewController.swift in Sources */,
 				E70316D4266E427000970495 /* MultipleTextSelectionCell.swift in Sources */,
 				E73502D0259BABED0082925E /* ResultsViewController.swift in Sources */,
+				E7CB938126944F0D00E0DFC4 /* ResultAnswerCell.swift in Sources */,
 				E7D0FA8326667C9F0026D101 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
