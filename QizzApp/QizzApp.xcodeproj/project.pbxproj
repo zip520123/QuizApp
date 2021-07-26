@@ -41,8 +41,8 @@
 		E77515AF2689E4A400933B05 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77515AE2689E4A400933B05 /* RoundedButton.swift */; };
 		E78FE13525CC330500D0255E /* ScoreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FE13425CC330500D0255E /* ScoreTest.swift */; };
 		E78FE13C25CC33DF00D0255E /* BasicScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78FE13B25CC33DF00D0255E /* BasicScore.swift */; };
-		E79A5BF72666BCE400ABDA23 /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A5BF62666BCE400ABDA23 /* iOSSwiftUIViewControllerFactoryTest.swift */; };
-		E79A5BFA2666BD3600ABDA23 /* iOSSwiftUIViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A5BF92666BD3600ABDA23 /* iOSSwiftUIViewControllerFactory.swift */; };
+		E79A5BF72666BCE400ABDA23 /* iOSSwiftUINavigationAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A5BF62666BCE400ABDA23 /* iOSSwiftUINavigationAdapterTest.swift */; };
+		E79A5BFA2666BD3600ABDA23 /* iOSSwiftUINavigationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A5BF92666BD3600ABDA23 /* iOSSwiftUINavigationAdapter.swift */; };
 		E79A5C2F2667DFAF00ABDA23 /* MultipleSelectionStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79A5C2E2667DFAF00ABDA23 /* MultipleSelectionStoreTests.swift */; };
 		E7A4839226906098001E12A6 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A4839126906098001E12A6 /* ResultView.swift */; };
 		E7CB938126944F0D00E0DFC4 /* ResultAnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CB938026944F0D00E0DFC4 /* ResultAnswerCell.swift */; };
@@ -116,8 +116,8 @@
 		E77515AE2689E4A400933B05 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		E78FE13425CC330500D0255E /* ScoreTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreTest.swift; sourceTree = "<group>"; };
 		E78FE13B25CC33DF00D0255E /* BasicScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicScore.swift; sourceTree = "<group>"; };
-		E79A5BF62666BCE400ABDA23 /* iOSSwiftUIViewControllerFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactoryTest.swift; sourceTree = "<group>"; };
-		E79A5BF92666BD3600ABDA23 /* iOSSwiftUIViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUIViewControllerFactory.swift; sourceTree = "<group>"; };
+		E79A5BF62666BCE400ABDA23 /* iOSSwiftUINavigationAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUINavigationAdapterTest.swift; sourceTree = "<group>"; };
+		E79A5BF92666BD3600ABDA23 /* iOSSwiftUINavigationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSSwiftUINavigationAdapter.swift; sourceTree = "<group>"; };
 		E79A5C2E2667DFAF00ABDA23 /* MultipleSelectionStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionStoreTests.swift; sourceTree = "<group>"; };
 		E7A4839126906098001E12A6 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		E7CB938026944F0D00E0DFC4 /* ResultAnswerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAnswerCell.swift; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 				E73502C2259BABED0082925E /* iOSUIKitViewControllerFactory.swift */,
 				E73502C0259BABED0082925E /* NavigationControllerRouter.swift */,
 				E73502C1259BABED0082925E /* ViewControllerFactory.swift */,
-				E79A5BF92666BD3600ABDA23 /* iOSSwiftUIViewControllerFactory.swift */,
+				E79A5BF92666BD3600ABDA23 /* iOSSwiftUINavigationAdapter.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -284,7 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				E73502E0259BAC010082925E /* iOSUIKitViewControllerFactoryTest.swift */,
-				E79A5BF62666BCE400ABDA23 /* iOSSwiftUIViewControllerFactoryTest.swift */,
+				E79A5BF62666BCE400ABDA23 /* iOSSwiftUINavigationAdapterTest.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -544,7 +544,7 @@
 				E77515AF2689E4A400933B05 /* RoundedButton.swift in Sources */,
 				E78FE13C25CC33DF00D0255E /* BasicScore.swift in Sources */,
 				E73502D7259BABED0082925E /* ViewControllerFactory.swift in Sources */,
-				E79A5BFA2666BD3600ABDA23 /* iOSSwiftUIViewControllerFactory.swift in Sources */,
+				E79A5BFA2666BD3600ABDA23 /* iOSSwiftUINavigationAdapter.swift in Sources */,
 				E73502CC259BABED0082925E /* CorrectAnswerCell.swift in Sources */,
 				E70316D1266E41FB00970495 /* MultipleAnswerQuestion.swift in Sources */,
 				E73502D8259BABED0082925E /* iOSUIKitViewControllerFactory.swift in Sources */,
@@ -573,7 +573,7 @@
 				E73502ED259BAC010082925E /* iOSUIKitViewControllerFactoryTest.swift in Sources */,
 				E78FE13525CC330500D0255E /* ScoreTest.swift in Sources */,
 				E73502F5259BAC010082925E /* TableViewHelpers.swift in Sources */,
-				E79A5BF72666BCE400ABDA23 /* iOSSwiftUIViewControllerFactoryTest.swift in Sources */,
+				E79A5BF72666BCE400ABDA23 /* iOSSwiftUINavigationAdapterTest.swift in Sources */,
 				E73502F4259BAC010082925E /* QuestionViewControllerTest.swift in Sources */,
 				E73502F3259BAC010082925E /* ResultViewControllerTest.swift in Sources */,
 				E73502F1259BAC010082925E /* QuestionPresenterTest.swift in Sources */,
