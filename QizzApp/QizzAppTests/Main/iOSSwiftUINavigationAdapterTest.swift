@@ -89,32 +89,36 @@ class iOSSwiftUINavigationAdapterTest: XCTestCase {
         XCTAssertEqual(playAgainCount, 2)
     }
     
-    func test_answerForQuestion_pushesQuestionsToNavigationStack() {
+    func test_answerForQuestion_replacesNavigationStack() {
         let (sut, navigation) = makeSUT()
         sut.answer(for: singleAnswerQuestion) { _ in }
-        sut.answer(for: multipleAnswerQuestion) { _ in }
         
-        XCTAssertEqual(navigation.pushMessages.count, 2)
-        XCTAssertTrue(navigation.pushMessages.first?.viewController is UIHostingController<SingleAnswerQuestion>)
-        XCTAssertEqual(navigation.pushMessages.first?.animated, true)
-        XCTAssertTrue(navigation.pushMessages.last?.viewController is UIHostingController<MultipleAnswerQuestion>)
-        XCTAssertEqual(navigation.pushMessages.last?.animated, true)
+        XCTAssertEqual(navigation.viewControllers.count, 1)
+        XCTAssertTrue(navigation.viewControllers.first is UIHostingController<SingleAnswerQuestion>)
+        
+        sut.answer(for: multipleAnswerQuestion) { _ in }
+        XCTAssertEqual(navigation.viewControllers.count, 1)
+        XCTAssertTrue(navigation.viewControllers.first is UIHostingController<MultipleAnswerQuestion>)
+        
     }
     
-    func test_didCompleteQuiz_pushesResultToNavigationStack() {
+    func test_didCompleteQuiz_replacesNavigationStack() {
         let (sut, navigation) = makeSUT()
         sut.didCompleteQuiz(withAnswers: correctAnswers)
-        sut.didCompleteQuiz(withAnswers: correctAnswers)
+        XCTAssertTrue(navigation.viewControllers.first is UIHostingController<ResultView>)
+        XCTAssertEqual(navigation.viewControllers.count, 1)
         
-        XCTAssertEqual(navigation.pushMessages.count, 2)
-        XCTAssertTrue(navigation.pushMessages.first?.viewController is UIHostingController<ResultView>)
-        XCTAssertEqual(navigation.pushMessages.first?.animated, true)
-        XCTAssertTrue(navigation.pushMessages.last?.viewController is UIHostingController<ResultView>)
-        XCTAssertEqual(navigation.pushMessages.last?.animated, true)
+        sut.didCompleteQuiz(withAnswers: correctAnswers)
+        XCTAssertTrue(navigation.viewControllers.first is UIHostingController<ResultView>)
+        XCTAssertEqual(navigation.viewControllers.count, 1)
+        
     }
     
     private class NavigationSpy: UINavigationController {
         private(set) var pushMessages = [(viewController: UIViewController, animated: Bool)]()
+        override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
+            super.setViewControllers(viewControllers, animated: false)
+        }
         override func pushViewController(_ viewController: UIViewController, animated: Bool) {
             pushMessages.append((viewController, animated))
             super.pushViewController(viewController, animated: false)
