@@ -11,6 +11,6 @@ import XCTest
 class MultipleAnswerQuestionSnapshotTests: XCTestCase {
     func test() {
         let sut = MultipleAnswerQuestion(title: "A title", question: "A question", store: .init(options: ["Option 1", "Option 2"]))
-        record(<#T##issue: XCTIssue##XCTIssue#>)
+        
     }
 }
