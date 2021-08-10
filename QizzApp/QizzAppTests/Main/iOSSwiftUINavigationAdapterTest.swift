@@ -109,17 +109,6 @@ class iOSSwiftUINavigationAdapterTest: XCTestCase {
         
     }
     
-    private class NavigationSpy: UINavigationController {
-        private(set) var pushMessages = [(viewController: UIViewController, animated: Bool)]()
-        override func setViewControllers(_ viewControllers: [UIViewController], animated: Bool) {
-            super.setViewControllers(viewControllers, animated: false)
-        }
-        override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-            pushMessages.append((viewController, animated))
-            super.pushViewController(viewController, animated: false)
-        }
-    }
-    
     //MARK : Helpers
     private var quesions: [Question<String>] {
         [singleAnswerQuestion, multipleAnswerQuestion]
@@ -137,8 +126,8 @@ class iOSSwiftUINavigationAdapterTest: XCTestCase {
     private var singleAnswerQuestion: Question<String> { .singleAnswer("Q1") }
     private var multipleAnswerQuestion: Question<String> { .multibleAnswer("Q1") }
     
-    private func makeSUT(playAgain: @escaping ()->Void = {}) -> (iOSSwiftUINavigationAdapter, NavigationSpy) {
-        let navigation = NavigationSpy()
+    private func makeSUT(playAgain: @escaping ()->Void = {}) -> (iOSSwiftUINavigationAdapter, QuizNavigationStore) {
+        let navigation = QuizNavigationStore()
         let sut = iOSSwiftUINavigationAdapter(navigation: navigation, options: options, correctAnswers: correctAnswers, playAgain: playAgain)
         return (sut, navigation)
     }
@@ -169,14 +158,20 @@ class iOSSwiftUINavigationAdapterTest: XCTestCase {
     }
     
 }
-extension UINavigationController {
+extension QuizNavigationStore {
     var singleCurrentView: SingleAnswerQuestion? {
-        (topViewController as? UIHostingController<SingleAnswerQuestion>)?.rootView
+        if case let .single(view) = currentView {return view}
+        return nil
     }
     var multipleCurrentView: MultipleAnswerQuestion? {
-        (topViewController as? UIHostingController<MultipleAnswerQuestion>)?.rootView
+        if case let .multiple(view) = currentView {return view}
+        return nil
     }
     var resultCurrentView: ResultView? {
-        (topViewController as? UIHostingController<ResultView>)?.rootView
+        switch currentView {
+            case .result(let view): return view
+        default:
+            return nil
+        }
     }
 }
