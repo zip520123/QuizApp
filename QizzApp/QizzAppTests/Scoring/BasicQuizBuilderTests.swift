@@ -28,6 +28,7 @@ struct BasicQuizBuilder {
     enum AddingError: Error, Equatable {
         case duplicateOptions([String])
         case missingAnswerInOptions(answer: [String], options:[String])
+        case duplicateQuestion(Question<String>)
     }
     init(singleAnswerQuestion: String, options: NonEmptyOptions, answer: String) throws {
         let allOptions = options.all
@@ -44,6 +45,10 @@ struct BasicQuizBuilder {
     }
     
     mutating func add(singleAnswerQuestion: String, options: NonEmptyOptions, answer: String) throws {
+        let question = Question.singleAnswer(singleAnswerQuestion)
+        guard questions.contains(question) == false else {
+            throw AddingError.duplicateQuestion(question)
+        }
         let allOptions = options.all
         guard allOptions.contains(answer) else {
             throw AddingError.missingAnswerInOptions(answer: [answer], options: allOptions)
@@ -51,7 +56,6 @@ struct BasicQuizBuilder {
         guard Set(allOptions).count == allOptions.count else {
             throw AddingError.duplicateOptions(allOptions)
         }
-        let question = Question.singleAnswer(singleAnswerQuestion)
         self.questions += [question]
         self.options[question] = allOptions
         self.correctAnswers += [(question, [answer])]
@@ -139,6 +143,21 @@ class BasicQuizBuilderTests: XCTestCase {
                     answer: "o6")) { error in
             
             XCTAssertEqual(error as? BasicQuizBuilder.AddingError, BasicQuizBuilder.AddingError.missingAnswerInOptions(answer: ["o6"], options: ["o3","o4","o5"]))
+        }
+        
+    }
+    
+    func test_addSingleAnswerQuestion_duplicationQuestion_throw() throws {
+        var sut = try BasicQuizBuilder(
+            singleAnswerQuestion: "q1",
+            options: NonEmptyOptions(head: "o1", tail: ["o2","o3"]),
+            answer: "o1")
+        XCTAssertThrowsError(
+            try sut.add(singleAnswerQuestion: "q1",
+                        options: NonEmptyOptions(head: "o3", tail: ["o4","o5"]),
+                        answer: "o6")) { error in
+            
+            XCTAssertEqual(error as? BasicQuizBuilder.AddingError, BasicQuizBuilder.AddingError.duplicateQuestion(.singleAnswer("q1")))
         }
         
     }
