@@ -36,6 +36,16 @@ struct BasicQuizBuilder {
         try add(singleAnswerQuestion: singleAnswerQuestion, options: options, answer: answer)
     }
     
+    init(
+        multibleAnswerQuestion: String,
+        options: NonEmptyOptions,
+        answer: [String]) throws {
+        let question = Question.multibleAnswer(multibleAnswerQuestion)
+        self.questions = [question]
+        self.options[question] = options.all
+        self.correctAnswers = [(question, answer)]
+    }
+    
     private init(questions: [Question<String>], options: [Question<String> : [String]], correctAnswers: [(Question<String>, [String])]) {
         self.questions = questions
         self.options = options
@@ -82,6 +92,17 @@ class BasicQuizBuilderTests: XCTestCase {
         XCTAssertEqual(result.questions, [.singleAnswer("q1")])
         XCTAssertEqual(result.options, [.singleAnswer("q1"): ["o1","o2","o3"]])
         asserEqual(result.correctAnswers, [(.singleAnswer("q1"), ["o1"])])
+    }
+    
+    func test_initWithMultibleAnswerQuestion() throws {
+        let sut = try BasicQuizBuilder(
+            multibleAnswerQuestion: "q1",
+            options: NonEmptyOptions(head: "o1", tail: ["o2","o3"]),
+            answer: ["o1","o2"])
+        let result = sut.build()
+        XCTAssertEqual(result.questions, [.multibleAnswer("q1")])
+        XCTAssertEqual(result.options, [.multibleAnswer("q1"): ["o1","o2","o3"]])
+        asserEqual(result.correctAnswers, [(.multibleAnswer("q1"), ["o1","o2"])])
     }
     
     func test_initWithSingleAnswerQuestion_duplicateOptions_throws() throws {
