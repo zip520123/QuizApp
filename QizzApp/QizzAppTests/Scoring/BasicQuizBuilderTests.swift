@@ -41,6 +41,7 @@ struct BasicQuizBuilder {
         options: NonEmptyOptions,
         answer: [String]) throws {
         let question = Question.multibleAnswer(multibleAnswerQuestion)
+        guard Set(options.all).count == options.all.count else {throw BasicQuizBuilder.AddingError.duplicateOptions(options.all)}
         self.questions = [question]
         self.options[question] = options.all
         self.correctAnswers = [(question, answer)]
@@ -112,6 +113,15 @@ class BasicQuizBuilderTests: XCTestCase {
                                 answer: "o1"),
                throws:  BasicQuizBuilder.AddingError.duplicateOptions(["o1","o1","o3"]))
         
+        
+    }
+    
+    func test_initWithMulitpleAnswerQuestion_duplicateOptions_throws() throws {
+        assert(try BasicQuizBuilder(
+                multibleAnswerQuestion: "q1",
+                options: NonEmptyOptions(head: "o1", tail: ["o1","o3"]),
+                answer: ["o1"]),
+               throws:  BasicQuizBuilder.AddingError.duplicateOptions(["o1","o1","o3"]))
         
     }
     
